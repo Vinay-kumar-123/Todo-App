@@ -7,6 +7,11 @@ document.querySelector("#button").addEventListener("click", function () {
     let dueTime = document.querySelector("#input-time").value;
     let dueDate = document.querySelector("#input-date").value;
 
+    let btn = this;
+   btn.classList.add("button-animate");
+    setTimeout(function() {
+     btn.classList.remove("button-animate");
+    }, 100);
 
     if (taskInput === "" || dueDate === "" || dueTime === "") {
         alert("Please enter a task and select a due date and time");
@@ -21,8 +26,6 @@ document.querySelector("#button").addEventListener("click", function () {
     document.querySelector("#input-time").value = "";
 
     document.querySelector("#input-date").value = "";
-
-    
     renderTodoList();
 });
 
